@@ -1,0 +1,348 @@
+@import "bulma.css";
+@import "all.css";
+
+:root {
+  --gradient-blue: linear-gradient(-45deg, #061d68, #0066be, #061d68, #0066be);
+  --dark-blue: #061d68;
+  --light-blue: #0066be;
+}
+
+html,
+body {
+  /* position: relative; */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-family: "Kalam", cursive;
+}
+
+.main-font-family {
+  font-family: "Kalam", cursive;
+}
+
+.is-title-bar {
+  margin-bottom: 1em;
+  box-shadow: 0px 4px 8px -8px;
+}
+
+.main-bg {
+  background-color: #061d68 !important;
+  height: 100vh;
+}
+.main-bg {
+  background-image: var(--gradient-blue);
+  background-repeat: no-repeat;
+  background-size: 300vw 300vh;
+  animation: gradient 20s ease infinite alternate;
+}
+
+/** MODAL */
+.modal {
+  z-index: 98 !important;
+}
+/**TOOLTIP*/
+[data-tooltip] {
+  position: relative;
+  z-index: 97;
+  /*  display: block; */
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s ease-out;
+  transform: translate(-50%, 5px);
+}
+
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 5px;
+  padding: 7px;
+  /* width: 100%; */
+  min-width: 70px;
+  max-width: 250px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  transition: 0.2s ease-out;
+}
+
+.has-text-orange {
+  color: orange !important;
+}
+
+.tooltip-right:before {
+  bottom: 0%;
+  left: 200%;
+  width: 120%;
+}
+
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+[data-tooltip="false"]:hover:before,
+[data-tooltip="false"]:hover:after {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  [data-tooltip]:hover:before,
+  [data-tooltip]:hover:after {
+    visibility: hidden;
+  }
+}
+/**END TOOLTIP*/
+
+/** SCROLL BAR */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(150, 150, 150);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(99, 99, 99);
+}
+/**END SCROLL BAR */
+
+/** checkbox */
+input[type="checkbox"].md {
+  width: 1.25em;
+  height: 1.25em;
+}
+
+/** Radio */
+.radio-moyen {
+  width: 1.5em;
+  height: 1.5em;
+}
+.radio-moyen:hover {
+  cursor: pointer;
+  background-color: lightslategray;
+}
+
+/** table **/
+.is-hoverable tbody tr {
+  cursor: pointer;
+}
+/** Utilities **/
+.no-click {
+  pointer-events: none !important;
+}
+
+/*********
+  SWITCH
+  <label class="switch">
+    <input type="checkbox" />
+    <span class="slider round" />
+  </label>
+  *********/
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* utilities */
+.is-hoverable {
+  cursor: pointer;
+}
+
+.is-inline-block {
+  display: inline-block;
+}
+
+/** PDF **/
+#page {
+  box-shadow: 2px 2px 20px -10px black;
+  margin: 15px 0 15px 0;
+}
+.pdf-page-container {
+  /* height: 10.8in;
+  width: 8.4in;*/
+  padding: 1em;
+}
+.pdf-page-container > * {
+  margin-bottom: 2rem;
+}
+.pdf-magin {
+  padding: 1rem;
+}
+
+.pdf-page-title {
+  border-bottom: 3px solid #ffe08a;
+  line-height: 1.5em;
+}
+.pdf-general-notice {
+  border: 2px solid black;
+  padding: 0.5rem;
+}
+
+.pdf-max-height-10 {
+  max-height: 10in;
+  overflow: hidden;
+}
+.pdf-max-height-9 {
+  max-height: 9in;
+  overflow: hidden;
+}
+.pdf-max-height-8 {
+  max-height: 8in;
+  overflow: hidden;
+}
+.pdf-max-height-7 {
+  max-height: 7in;
+  overflow: hidden;
+}
+.pdf-max-height-6 {
+  max-height: 6in;
+  overflow: hidden;
+}
+.pdf-max-height-5 {
+  max-height: 5in;
+  overflow: hidden;
+}
+.pdf-max-height-4 {
+  max-height: 4in;
+  overflow: hidden;
+}
+.pdf-max-height-3 {
+  max-height: 3in;
+  overflow: hidden;
+}
+.pdf-max-height-2 {
+  max-height: 2in;
+  overflow: hidden;
+}
+.pdf-max-height-1 {
+  max-height: 1in;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+/* level content */
+.is-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.is-100-height {
+  height: 100%;
+  margin-top: -0.1em !important;
+}
