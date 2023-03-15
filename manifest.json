@@ -1,0 +1,56 @@
+{
+  "name": "Scavenger Hunt 0",
+  "short_name": "SH0",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#061d68",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/client/public/imgages/icons/48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/client/public/imgages/icons/72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "/client/public/imgages/icons/96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/client/public/imgages/icons/128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/client/public/imgages/icons/144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/client/public/imgages/icons/152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "/client/public/imgages/icons/192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/client/public/imgages/icons/384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "/client/public/imgages/icons/512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
